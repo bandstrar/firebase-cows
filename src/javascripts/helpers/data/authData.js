@@ -4,7 +4,6 @@ import 'firebase/auth';
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      console.warn(user);
       $('#auth').addClass('hide');
       $('#pasture').removeClass('hide');
       $('#pasture').html(`<img src="${user.photoURL}" alt="${user.displayName}">`);
